@@ -1,29 +1,21 @@
 <style>
-    .banner {
-        margin-bottom: 30px;
-    }
-
     .banner .slide {
         content: " ";
-        padding-bottom: 700px;
+        padding-bottom: 475px;
         background-image: url('../assets/img/banner.jpg');
-        background-position: right;
+        background-position: -980px 0px;
         background-repeat: no-repeat;
         background-size: cover;
     }
 
     .banner .slide .content {
-        font-size: 24px;
-        font-weight: bold;
-        color: #FFF;
         max-width: 300px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .banner .slide .content .content-text {
-        padding-top: 50px;
-        margin-bottom: 30px;
+        font-size: 24px;
+        font-family: 'Santral Bold';
+        color: #FFF;
     }
 
     .banner .slide .content .btn-yellow {
@@ -34,12 +26,16 @@
         padding: 10px;
         border-radius: 10px;
     }
+
+    .banner .slide .content .btn-yellow:focus {
+        box-shadow: none;
+    }
 </style>
 
-<div class="banner">
+<div class="banner row mb-5">
     <div class="slide">
-        <div class="content text-center">
-            <div class="content-text">Southeast Asia’s Premiere esports and Gametertainment Brand</div>
+        <div class="content text-center ms-auto me-auto">
+            <div class="content-text mb-4 pt-5">Southeast Asia’s Premiere esports and Gametertainment Brand</div>
 
             <button type="button" class="btn btn-primary btn-yellow">
                 GET STARTED

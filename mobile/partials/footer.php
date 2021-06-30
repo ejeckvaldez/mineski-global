@@ -1,16 +1,6 @@
 <style>
     footer .footer-logo {
         display: flex;
-        margin-bottom: 20px;
-    }
-
-    footer .footer-logo .footer-img {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    footer .footer-links {
-        margin-bottom: 20px;
     }
 
     footer .footer-links .footer-link .footer-list {
@@ -32,14 +22,9 @@
         color: #858585;
     }
 
-    footer .socials {
-        margin-bottom: 50px;
-    }
-
     footer .socials .social-header {
         font-size: 16px;
         font-weight: bold;
-        margin-bottom: 10px;
     }
 
     footer .socials .social-links .facebook:before,
@@ -81,17 +66,16 @@
 
     footer .copyright {
         font-size: 12px;
-        padding-bottom: 10px;
         border-bottom: 3px solid #D8D8D8;
     }
 </style>
 
-<footer class="container-fluid">
-    <div class="footer-logo col-sm-12 col-12">
-        <img class="footer-img" src="../assets/img/mineski-logo.png">
+<footer class="container-fluid pb-3">
+    <div class="footer-logo col-sm-12 col-12 mb-3">
+        <img class="footer-img ms-auto me-auto" src="../assets/img/mineski-logo.png">
     </div>
 
-    <div class="footer-links col-sm-12 col-12">
+    <div class="footer-links col-sm-12 col-12 mb-3">
         <div class="row">
             <div class="col-sm-6 col-6">
                 <div class="footer-link text-center">
@@ -247,9 +231,9 @@
         </div>
     </div>
 
-    <div class="socials col-sm-12 col-12">
+    <div class="socials col-sm-12 col-12 mb-4">
         <div class="row">
-            <div class="social-header text-center">Stay Connected</div>
+            <div class="social-header text-center mb-3">Stay Connected</div>
         </div>
 
         <div class="row">
@@ -279,7 +263,7 @@
         </div>
     </div>
 
-    <div class="copyright text-center col-sm-12 col-12">
+    <div class="copyright text-center col-sm-12 col-12 pb-3">
         <span>Copyright © 2021 Mineski Global. All Rights Reserved.</span>
     </div>
 </footer>
