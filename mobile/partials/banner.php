@@ -3,7 +3,7 @@
         content: " ";
         padding-bottom: 475px;
         background-image: url('../assets/img/banner.jpg');
-        background-position: -980px 0px;
+        background-position: right;
         background-repeat: no-repeat;
         background-size: cover;
     }

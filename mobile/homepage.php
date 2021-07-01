@@ -1,3 +1,62 @@
+<?php
+
+$interests = [
+    [
+        'photo' => '../assets/img/esports-event.png',
+        'label' => 'Sponsor or Host Esports Event',
+    ],
+    [
+        'photo' => '../assets/img/esports-team.png',
+        'label' => 'Create an Esports Team',
+    ],
+    [
+        'photo' => '../assets/img/gamify.png',
+        'label' => 'Gamify your Platform',
+    ],
+    [
+        'photo' => '../assets/img/campaign.png',
+        'label' => 'Plan Marketing Campaign',
+    ],
+    [
+        'photo' => '../assets/img/employees.png',
+        'label' => 'Improve Productivity of Employees',
+    ],
+    [
+        'photo' => '../assets/img/mnski.png',
+        'label' => 'Mineski Global',
+    ],
+    [
+        'photo' => '../assets/img/investment.png',
+        'label' => 'Investment Opportunities',
+    ],
+    [
+        'photo' => '../assets/img/others.png',
+        'label' => 'Others',
+    ],
+];
+
+$partners = [
+    [
+        'photo' => '../assets/img/disney.png',
+        'label' => 'Disney',
+    ],
+    [
+        'photo' => '../assets/img/asus.png',
+        'label' => 'ASUS',
+    ],
+];
+
+$announcements = [
+    [
+        'photo' => '../assets/img/announcement.jpg',
+        'headline' => 'THE FINAL ROAD TO MASTERS BERLIN: VCT Stage 3 – Challengers PH kicks off Registrations this June',
+        'body' => 'The Philippine Pro Gaming League (PPGL) returns for the third and final Stage of the 2021 VALORANT Challengers, the qualification path for Filipino gamers...',
+        'date_created' => date('Y, F d', strtotime('2021-06-18')),
+    ],
+];
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -34,38 +93,6 @@
             padding-top: 120px;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
-        }
-
-        .main .interests .interest-block .interest-photo.esports-event {
-            background-image: url('../assets/img/esports-event.png');
-        }
-
-        .main .interests .interest-block .interest-photo.esports-team {
-            background-image: url('../assets/img/esports-team.png');
-        }
-
-        .main .interests .interest-block .interest-photo.gamify {
-            background-image: url('../assets/img/gamify.png');
-        }
-
-        .main .interests .interest-block .interest-photo.campaign {
-            background-image: url('../assets/img/campaign.png');
-        }
-
-        .main .interests .interest-block .interest-photo.employees {
-            background-image: url('../assets/img/employees.png');
-        }
-
-        .main .interests .interest-block .interest-photo.mnski {
-            background-image: url('../assets/img/mnski.png');
-        }
-
-        .main .interests .interest-block .interest-photo.investment {
-            background-image: url('../assets/img/investment.png');
-        }
-
-        .main .interests .interest-block .interest-photo.others {
-            background-image: url('../assets/img/others.png');
         }
 
         .main .interests .interest-block .interest-details {
@@ -128,7 +155,6 @@
         }
 
         .main .announcements .announcement-block .announcement-photo {
-            background-image: url('../assets/img/announcement.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -226,75 +252,15 @@
                     </div>
 
                     <div class="row">
+                        <?php foreach ($interests as $interest): ?>
                         <div class="col-sm-6 col-6 d-flex">
                             <div class="interest-block mb-3">
-                                <div class="interest-photo esports-event"></div>
+                                <div class="interest-photo" style="background-image: url('<?php echo $interest['photo']; ?>');"></div>
 
-                                <div class="interest-details p-2">Sponsor or Host Esports Event</div>
+                                <div class="interest-details p-2"><?php echo $interest['label']; ?></div>
                             </div>
                         </div>
-
-                        <div class="col-sm-6 col-6 d-flex">
-                            <div class="interest-block mb-3">
-                                <div class="interest-photo esports-team"></div>
-
-                                <div class="interest-details p-2">Create an Esports Team</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6 col-6 d-flex">
-                            <div class="interest-block mb-3">
-                                <div class="interest-photo gamify"></div>
-
-                                <div class="interest-details p-2">Gamify your Platform</div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-6 d-flex">
-                            <div class="interest-block mb-3">
-                                <div class="interest-photo campaign"></div>
-
-                                <div class="interest-details p-2">Plan Marketing Campaign</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6 col-6 d-flex">
-                            <div class="interest-block mb-3">
-                                <div class="interest-photo employees"></div>
-
-                                <div class="interest-details p-2">Improve Productivity of Employees</div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-6 d-flex">
-                            <div class="interest-block mb-3">
-                                <div class="interest-photo mnski"></div>
-
-                                <div class="interest-details p-2">Mineski Global</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6 col-6 d-flex">
-                            <div class="interest-block mb-3">
-                                <div class="interest-photo investment"></div>
-
-                                <div class="interest-details p-2">Investment Opportunities</div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-6 d-flex">
-                            <div class="interest-block mb-3">
-                                <div class="interest-photo others"></div>
-
-                                <div class="interest-details p-2">Others</div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </section>
@@ -332,13 +298,15 @@
                     </div>
 
                     <div class="partner-block row">
+                        <?php foreach($partners as $partner): ?>
                         <div class="partner-item disney col-sm-6 col-6">
-                            <img src="../assets/img/disney.png" class="w-100 h-auto">
+                            <img
+                                src="<?php echo $partner['photo']; ?>"
+                                alt="<?php echo $partner['label']; ?>"
+                                class="w-100 h-auto"
+                            >
                         </div>
-
-                        <div class="partner-item asus col-sm-6 col-6">
-                            <img src="../assets/img/asus.png" class="w-100 h-auto">
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </section>
@@ -355,23 +323,24 @@
                         </span>
                     </div>
 
+                    <?php foreach ($announcements as $announcement): ?>
                     <div class="announcement-block row">
-                        <div class="announcement-photo esports-event"></div>
+                        <div class="announcement-photo" style="background-image: url('<?php echo $announcement['photo']; ?>'); "></div>
 
                         <div class="announcement-header text-center p-2">
-                            THE FINAL ROAD TO MASTERS BERLIN: VCT Stage 3 – Challengers PH kicks off Registrations this June
+                            <?php echo $announcement['headline']; ?>
                         </div>
 
                         <div class="announcement-body text-center p-2">
-                            The Philippine Pro Gaming League (PPGL) returns for the third and final Stage of
-                            the 2021 VALORANT Challengers, the qualification path for Filipino gamers...
+                            <?php echo $announcement['body']; ?>
                         </div>
 
                         <div class="announcement-footer p-3">
                             <a class="announcement-link float-start">Read More <i class="fas fa-arrow-right"></i></a>
-                            <div class="announcement-date float-end"><i class="fas fa-calendar"></i> 18, June 2021</div>
+                            <div class="announcement-date float-end"><i class="fas fa-calendar"></i> <?php echo $announcement['date_created']; ?></div>
                         </div>
                     </div>
+                    <?php endforeach; ?>
                 </div>
             </section>
 
