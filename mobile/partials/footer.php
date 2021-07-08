@@ -1,4 +1,8 @@
 <style>
+    footer {
+        background-color: #F8F8F8;
+    }
+
     footer .footer-logo {
         display: flex;
     }
