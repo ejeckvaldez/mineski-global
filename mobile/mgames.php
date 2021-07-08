@@ -34,18 +34,18 @@ $case_studies = [
         'header' => '200+ Exclusive Games',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat quis commodo leo ut adipiscing convallis et sit. Est nascetur interdum tellus mi tincidunt amet odio vitae. Non vitae eu habitant condimentum nisl, adipiscing lectus.',
     ],
-    /* [
-        'photo_wide' => '../assets/img/case-study-wide',
-        'photo_thin' => '../assets/img/case-study-thin',
+    [
+        'photo_wide' => '../assets/img/case-study-wide.jpg',
+        'photo_thin' => '../assets/img/case-study-thin.jpg',
         'header' => '200+ Exclusive Games',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat quis commodo leo ut adipiscing convallis et sit. Est nascetur interdum tellus mi tincidunt amet odio vitae. Non vitae eu habitant condimentum nisl, adipiscing lectus.',
     ],
     [
-        'photo_wide' => '../assets/img/case-study-wide',
-        'photo_thin' => '../assets/img/case-study-thin',
+        'photo_wide' => '../assets/img/case-study-wide.jpg',
+        'photo_thin' => '../assets/img/case-study-thin.jpg',
         'header' => '200+ Exclusive Games',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat quis commodo leo ut adipiscing convallis et sit. Est nascetur interdum tellus mi tincidunt amet odio vitae. Non vitae eu habitant condimentum nisl, adipiscing lectus.',
-    ], */
+    ],
 ];
 
 ?>
@@ -58,6 +58,8 @@ $case_studies = [
     <link href="../assets/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="../assets/fonts/santral/style.css" rel="stylesheet">
     <link href="../assets/fonts/basier/style.css" rel="stylesheet">
+    <link href="../assets/slick-1.8.1/slick/slick.css" rel="stylesheet">
+    <link href="../assets/slick-1.8.1/slick/slick-theme.css" rel="stylesheet">
 
     <title>Mineski Global</title>
 
@@ -301,6 +303,10 @@ $case_studies = [
             width: 150px;
         }
     </style>
+
+    <script src="../assets/bootstrap-5.0.2/js/bootstrap.min.js"></script>
+    <script src="../assets/jquery-3.6.0/jquery-3.6.0.js"></script>
+    <script src="../assets/slick-1.8.1/slick/slick.js"></script>
 </head>
 
 <body>
@@ -380,21 +386,25 @@ $case_studies = [
 
             <section id="case-studies" class="case-studies section-wrapper clearfix pt-4 pb-4">
                 <div class="col-sm-12 col-12">
-                    <?php foreach ($case_studies as $row) : ?>
-                        <div class="row p-3">
-                            <div class="photo-wide" style="background-image: url('<?php echo $row['photo_wide']; ?>');"></div>
+                    <div class="case-study-block">
+                        <?php foreach ($case_studies as $row) : ?>
+                            <div class="case-study-item">
+                                <div class="row p-3">
+                                    <div class="photo-wide" style="background-image: url('<?php echo $row['photo_wide']; ?>');"></div>
 
-                            <div class="photo-thin" style="background-image: url('<?php echo $row['photo_thin']; ?>');"></div>
-                        </div>
+                                    <div class="photo-thin" style="background-image: url('<?php echo $row['photo_thin']; ?>');"></div>
+                                </div>
 
-                        <div class="row">
-                            <div class="header text-center mb-4"><?php echo $row['header']; ?></div>
-                        </div>
+                                <div class="row">
+                                    <div class="header text-center mb-4"><?php echo $row['header']; ?></div>
+                                </div>
 
-                        <div class="row">
-                            <div class="description text-center"><?php echo $row['description']; ?></div>
-                        </div>
-                    <?php endforeach; ?>
+                                <div class="row">
+                                    <div class="description text-center"><?php echo $row['description']; ?></div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </section>
 
@@ -459,7 +469,19 @@ $case_studies = [
 
     <?php include('./partials/footer.php'); ?>
 
-    <script src="../assets/bootstrap-5.0.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.case-study-block').slick({
+                'accessibility': true,
+                'adaptiveHeight': false,
+                'autoplay': true,
+                'autoplaySpeed': '3000',
+                'arrows': false,
+                'dots': true,
+                'infinite': true,
+            });
+        });
+    </script>
 </body>
 
 </html>

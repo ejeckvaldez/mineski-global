@@ -44,9 +44,41 @@ $partners = [
         'photo' => '../assets/img/asus.png',
         'label' => 'ASUS',
     ],
+    [
+        'photo' => '../assets/img/disney.png',
+        'label' => 'Disney',
+    ],
+    [
+        'photo' => '../assets/img/asus.png',
+        'label' => 'ASUS',
+    ],
 ];
 
 $announcements = [
+    [
+        'photo' => '../assets/img/announcement.jpg',
+        'headline' => 'THE FINAL ROAD TO MASTERS BERLIN: VCT Stage 3 – Challengers PH kicks off Registrations this June',
+        'body' => 'The Philippine Pro Gaming League (PPGL) returns for the third and final Stage of the 2021 VALORANT Challengers, the qualification path for Filipino gamers...',
+        'date_created' => date('Y, F d', strtotime('2021-06-18')),
+    ],
+    [
+        'photo' => '../assets/img/announcement.jpg',
+        'headline' => 'THE FINAL ROAD TO MASTERS BERLIN: VCT Stage 3 – Challengers PH kicks off Registrations this June',
+        'body' => 'The Philippine Pro Gaming League (PPGL) returns for the third and final Stage of the 2021 VALORANT Challengers, the qualification path for Filipino gamers...',
+        'date_created' => date('Y, F d', strtotime('2021-06-18')),
+    ],
+    [
+        'photo' => '../assets/img/announcement.jpg',
+        'headline' => 'THE FINAL ROAD TO MASTERS BERLIN: VCT Stage 3 – Challengers PH kicks off Registrations this June',
+        'body' => 'The Philippine Pro Gaming League (PPGL) returns for the third and final Stage of the 2021 VALORANT Challengers, the qualification path for Filipino gamers...',
+        'date_created' => date('Y, F d', strtotime('2021-06-18')),
+    ],
+    [
+        'photo' => '../assets/img/announcement.jpg',
+        'headline' => 'THE FINAL ROAD TO MASTERS BERLIN: VCT Stage 3 – Challengers PH kicks off Registrations this June',
+        'body' => 'The Philippine Pro Gaming League (PPGL) returns for the third and final Stage of the 2021 VALORANT Challengers, the qualification path for Filipino gamers...',
+        'date_created' => date('Y, F d', strtotime('2021-06-18')),
+    ],
     [
         'photo' => '../assets/img/announcement.jpg',
         'headline' => 'THE FINAL ROAD TO MASTERS BERLIN: VCT Stage 3 – Challengers PH kicks off Registrations this June',
@@ -65,12 +97,26 @@ $announcements = [
     <link href="../assets/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="../assets/fonts/santral/style.css" rel="stylesheet">
     <link href="../assets/fonts/basier/style.css" rel="stylesheet">
+    <link href="../assets/slick-1.8.1/slick/slick.css" rel="stylesheet">
+    <link href="../assets/slick-1.8.1/slick/slick-theme.css" rel="stylesheet">
 
     <title>Mineski Global</title>
 
     <style>
         * {
             font-family: 'Santral SemiBold';
+        }
+
+        .btn-slick {
+            background-color: #E9E9E9;
+        }
+
+        .btn-slick:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        .btn-slick:focus {
+            box-shadow: none;
         }
 
         .main .interests .interest-description {
@@ -126,9 +172,9 @@ $announcements = [
             font-size: 14px;
         }
 
-        .main .partners .partner-block {
-            justify-content: center;
+        .main .partners .partner-block .slick-track {
             align-items: center;
+            display: flex !important;
         }
 
         .main .announcements {
@@ -146,15 +192,14 @@ $announcements = [
             color: #7A7A7A;
         }
 
-        .main .announcements .announcement-block {
+        .main .announcements .announcement-block .announcement-item {
             border: 1px solid #EEE;
             border-radius: 20px;
             flex: 1;
-            box-shadow: 0px 0px 25px 0px #A7A7A740;
             background-color: #FFF;
         }
 
-        .main .announcements .announcement-block .announcement-photo {
+        .main .announcements .announcement-block .announcement-item .announcement-photo {
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -165,29 +210,78 @@ $announcements = [
             border-top-right-radius: 20px;
         }
 
-        .main .announcements .announcement-block .announcement-header {
+        .main .announcements .announcement-block .announcement-item .announcement-header {
             font-family: 'Santral Bold';
             font-size: 16px;
             color: #1A1A1A;
         }
 
-        .main .announcements .announcement-block .announcement-body {
+        .main .announcements .announcement-block .announcement-item .announcement-body {
             font-family: 'Santral Book';
             font-size: 14px;
             color: #858585;
         }
 
-        .main .announcements .announcement-block .announcement-footer .announcement-link {
+        .main .announcements .announcement-block .announcement-item .announcement-footer .announcement-link {
             font-family: 'Santral SemiBold';
             font-size: 14px;
             color: #FBCA00;
             text-decoration: none;
         }
 
-        .main .announcements .announcement-block .announcement-footer .announcement-date {
+        .main .announcements .announcement-block .announcement-item .announcement-footer .announcement-date {
             font-family: 'Santral Book';
             font-size: 14px;
             color: #858585;
+        }
+
+        .main .announcements .announcement-dots {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .main .announcements .announcement-dots li {
+            position: relative;
+            display: inline-flex;
+            width: 15px;
+            height: 15px;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .main .announcements .announcement-dots li button {
+            display: block;
+            font-size: 0;
+            line-height: 0;
+            width: 15px;
+            height: 15px;
+            padding: 5px;
+            color: transparent;
+            border: 0;
+            outline: none;
+            background-color: transparent;
+        }
+
+        .main .announcements .announcement-dots li button:before {
+            font-family: 'slick';
+            font-size: 6px;
+            line-height: 15px;
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            content: '•';
+            text-align: center;
+            color: #E2E2E2;
+        }
+
+        .main .announcements .announcement-dots li.slick-active button:before {
+            color: #C4C4C4;
+            font-size: 10px;
+            top: 0;
         }
 
         .main .subscriptions {
@@ -229,6 +323,10 @@ $announcements = [
             box-shadow: none;
         }
     </style>
+
+    <script src="../assets/bootstrap-5.0.2/js/bootstrap.min.js"></script>
+    <script src="../assets/jquery-3.6.0/jquery-3.6.0.js"></script>
+    <script src="../assets/slick-1.8.1/slick/slick.js"></script>
 </head>
 
 <body>
@@ -252,14 +350,14 @@ $announcements = [
                     </div>
 
                     <div class="row">
-                        <?php foreach ($interests as $interest): ?>
-                        <div class="col-sm-6 col-6 d-flex">
-                            <div class="interest-block mb-3">
-                                <div class="interest-photo" style="background-image: url('<?php echo $interest['photo']; ?>');"></div>
+                        <?php foreach ($interests as $interest) : ?>
+                            <div class="col-sm-6 col-6 d-flex">
+                                <div class="interest-block mb-3">
+                                    <div class="interest-photo" style="background-image: url('<?php echo $interest['photo']; ?>');"></div>
 
-                                <div class="interest-details p-2"><?php echo $interest['label']; ?></div>
+                                    <div class="interest-details p-2"><?php echo $interest['label']; ?></div>
+                                </div>
                             </div>
-                        </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
@@ -298,16 +396,14 @@ $announcements = [
                     </div>
 
                     <div class="partner-block row">
-                        <?php foreach($partners as $partner): ?>
-                        <div class="partner-item disney col-sm-6 col-6">
-                            <img
-                                src="<?php echo $partner['photo']; ?>"
-                                alt="<?php echo $partner['label']; ?>"
-                                class="w-100 h-auto"
-                            >
-                        </div>
+                        <?php foreach ($partners as $partner) : ?>
+                            <div class="partner-item disney">
+                                <img src="<?php echo $partner['photo']; ?>" alt="<?php echo $partner['label']; ?>" class="w-100 h-auto">
+                            </div>
                         <?php endforeach; ?>
                     </div>
+
+                    <div class="arrow d-flex justify-content-center"></div>
                 </div>
             </section>
 
@@ -323,24 +419,28 @@ $announcements = [
                         </span>
                     </div>
 
-                    <?php foreach ($announcements as $announcement): ?>
                     <div class="announcement-block row">
-                        <div class="announcement-photo" style="background-image: url('<?php echo $announcement['photo']; ?>'); "></div>
+                        <?php foreach ($announcements as $announcement) : ?>
+                            <div class="announcement-item">
+                                <div class="announcement-photo" style="background-image: url('<?php echo $announcement['photo']; ?>'); "></div>
 
-                        <div class="announcement-header text-center p-2">
-                            <?php echo $announcement['headline']; ?>
-                        </div>
+                                <div class="announcement-header text-center p-2">
+                                    <?php echo $announcement['headline']; ?>
+                                </div>
 
-                        <div class="announcement-body text-center p-2">
-                            <?php echo $announcement['body']; ?>
-                        </div>
+                                <div class="announcement-body text-center p-2">
+                                    <?php echo $announcement['body']; ?>
+                                </div>
 
-                        <div class="announcement-footer p-3">
-                            <a class="announcement-link float-start">Read More <i class="fas fa-arrow-right"></i></a>
-                            <div class="announcement-date float-end"><i class="fas fa-calendar"></i> <?php echo $announcement['date_created']; ?></div>
-                        </div>
+                                <div class="announcement-footer p-3">
+                                    <a class="announcement-link float-start">Read More <i class="fas fa-arrow-right"></i></a>
+                                    <div class="announcement-date float-end"><i class="fas fa-calendar"></i> <?php echo $announcement['date_created']; ?></div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
-                    <?php endforeach; ?>
+
+                    <div class="dot d-flex justify-content-center"></div>
                 </div>
             </section>
 
@@ -373,7 +473,36 @@ $announcements = [
 
     <?php include('./partials/footer.php'); ?>
 
-    <script src="../assets/bootstrap-5.0.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.partner-block').slick({
+                'accessibility': true,
+                'adaptiveHeight': false,
+                'autoplay': true,
+                'autoplaySpeed': '3000',
+                'arrows': true,
+                'appendArrows': $('#partners .arrow'),
+                'prevArrow': '<button type="button" class="btn btn-slick fas fa-arrow-left"></button>',
+                'nextArrow': '<button type="button" class="btn btn-slick fas fa-arrow-right"></button>',
+                'dots': false,
+                'infinite': true,
+                'slidesToShow': 2,
+                'slidesToScroll': 2,
+            });
+
+            $('.announcement-block').slick({
+                'accessibility': true,
+                'adaptiveHeight': false,
+                'autoplay': true,
+                'autoplaySpeed': '3000',
+                'arrows': false,
+                'appendDots': $('#announcements .dot'),
+                'dots': true,
+                'dotsClass': 'announcement-dots text-center',
+                'infinite': true,
+            });
+        });
+    </script>
 </body>
 
 </html>
